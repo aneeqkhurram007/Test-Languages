@@ -1,0 +1,56 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - test1",
+      "request": "launch",
+      "mainClass": "test1",
+      "projectName": "Test_d42f632e"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - hello",
+      "request": "launch",
+      "mainClass": "hello",
+      "projectName": "Test_d42f632e"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "Test_d42f632e"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - test1",
+      "request": "launch",
+      "mainClass": "test1",
+      "projectName": "Test_da17ac06"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "Test_da17ac06"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)",
+      "request": "launch",
+      "mainClass": "",
+      "vmArgs": "--enable-preview"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    }
+  ]
+}
