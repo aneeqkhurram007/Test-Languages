@@ -3,8 +3,8 @@ using namespace std;
 int main()
 {
     //Task 1-Insertion
-    int array[16], i, j, temp, search, replace, flag = 0, flag1 = 0, del, count = 0;
-    for (i = 0; i < 15; i++)
+    int array[5], i, j, temp, search, replace, flag = 0, flag1 = 0, del, count = 0;
+    for (i = 0; i < 4; i++)
     {
         cout << "\nPlease enter marks for Student " << i + 1 << " :";
         cin >> array[i];
@@ -19,9 +19,9 @@ int main()
         }
     }
     //Task 2-Sorting
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 4; i++)
     {
-        for (j = i + 1; j < 15; j++)
+        for (j = i + 1; j < 4; j++)
         {
             if (array[i] > array[j])
             {
@@ -32,14 +32,14 @@ int main()
         }
     }
     cout << "\nSorted (Ascending Order):" << endl;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 4; i++)
         cout << array[i] << "\n";
     cout << endl;
 
     //Task 3-Searching and Task 4-Replacing
     cout << "\nSearch an element in array: ";
     cin >> search;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 4; i++)
     {
         if (search == array[i])
         {
@@ -56,10 +56,10 @@ int main()
         array[4] = search;
 
         //Increment Sorting
-        for (i = 0; i < 16; i++)
+        for (i = 0; i < 5; i++)
         {
 
-            for (j = i + 1; j < 16; j++)
+            for (j = i + 1; j < 5; j++)
             {
                 if (array[i] > array[j])
                 {
@@ -70,7 +70,7 @@ int main()
             }
         }
         cout << "\nSorted (Ascending Order):" << endl;
-        for (i = 0; i < 16; i++)
+        for (i = 0; i < 5; i++)
             cout << array[i] << "\n";
         cout << endl;
     }
@@ -78,9 +78,9 @@ int main()
     if (flag == 1)
     {
 
-        for (i = 0; i < 15; i++)
+        for (i = 0; i < 4; i++)
         {
-            for (j = i + 1; j < 15; j++)
+            for (j = i + 1; j < 4; j++)
             {
                 if (array[i] > array[j])
                 {
@@ -92,7 +92,7 @@ int main()
         }
 
         cout << "\nSorted (Ascending Order):" << endl;
-        for (i = 0; i < 15; i++)
+        for (i = 0; i < 4; i++)
             cout << array[i] << "\n";
         cout << endl;
     }
@@ -100,11 +100,11 @@ int main()
 
     cout << "Enter element to be delete : ";
     cin >> del;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 4; i++)
     {
         if (array[i] == del)
         {
-            for (int j = i; j < (15 - 1); j++)
+            for (int j = i; j < (4 - 1); j++)
             {
                 array[j] = array[j + 1];
             }
@@ -115,12 +115,12 @@ int main()
     if (count == 0)
     {
         cout << "Element not found..!!";
-    }
+        }
     else
     {
         cout << "Element deleted successfully..!!\n";
         cout << "Now the new array is :\n";
-        for (i = 0; i < (15 - 1); i++)
+        for (i = 0; i < (4 - 1); i++)
         {
             cout << array[i] << "\n";
         }
