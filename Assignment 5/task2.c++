@@ -3,24 +3,23 @@
 using namespace std;
 int main()
 {
-    string char1, char2;
-    cout << "Enter the names: " << endl;
-    getline(cin, char1);
-    int len = char1.length();
-    cout << "Animal you want to find: " << endl;
-    getline(cin, char2);
-    int pen = char2.length();
+    string ch1;
+    char ch2[20];
+    cout << "ENTER THE NAMES IF ANIMALS IN THE MAIN ARRAY: " << endl;
+    getline(cin, ch1);
+    int len = ch1.length();
+    cout << "ENTER THE NAME OF ANIMAL YOU WANT TO FIND: " << endl;
+    cin >> ch2;
+
     for (int i = 0; i < len; i++)
     {
-        if (char1[i] == char2[i])
+        if (ch1[i] == ch2[i])
         {
-            cout << "It is present in the array" << endl;
-            break;
+            cout << "IT IS PRESENT IN THE MAIN ARRAY" << endl;
         }
         else
         {
-            cout << "It is not pressent in the arrat" << endl;
-            break;
+            cout << "IT IS NOT PRESENT" << endl;
         }
     }
     return 0;

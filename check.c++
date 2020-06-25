@@ -1,88 +1,82 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+int calSumUtil(int a[], int b[], int n, int m)
+{
+
+    int sum[n];
+
+    int i = n - 1, j = m - 1, k = n - 1;
+
+    int carry = 0, s = 0;
+
+    while (j >= 0)
+    {
+
+        s = a[i] + b[j] + carry;
+        sum[k] = (s % 10);
+
+        carry = s / 10;
+
+        k--;
+        i--;
+        j--;
+    }
+
+    while (i >= 0)
+    {
+
+        s = a[i] + carry;
+        sum[k] = (s % 10);
+        carry = s / 10;
+
+        i--;
+        k--;
+    }
+
+    int ans = 0;
+
+    if (carry)
+        ans = 10;
+
+    for (int i = 0; i <= n - 1; i++)
+    {
+        ans += sum[i];
+        ans *= 10;
+    }
+
+    return ans / 10;
+}
+
+int calSum(int a[], int b[], int n, int m)
+{
+
+    if (n >= m)
+        return calSumUtil(a, b, n, m);
+
+    else
+        return calSumUtil(b, a, m, n);
+}
+
 int main()
 {
-    int quizNo = 0, marks = 0,
-        sum_before = 0, sum_after = 0, i;
-
-    cout << "Please enter the total number of quizzes : ";
-    cin >> quizNo;
-    int beforeQuiz[quizNo], afterQuiz[quizNo];
-    //int midQuizzes = quizNo / 2;
-    //int uptoMidTermQuizzes[midQuizzes], allQuizes[quizNo];
-    //Quizes Before Mid Term
-    cout << "\nQuiz before MidTerm\n";
-    for (i = 0; i < quizNo; i++)
+    int a[5];
+    int b[5];
+    int i;
+    for (i = 0; i < 5; i++)
     {
-
-        cout << "Please enter the marks of quiz " << i + 1 << " : ";
-        cin >> beforeQuiz[i];
-        sum_before = sum_before + beforeQuiz[i];
+        cout << "\nEnter the " << i + 1 << " digit of your 1st number: ";
+        cin >> a[i];
     }
-
-    //Bubble Sort starts from here
-    for (int i = 0; i < quizNo; i++)
+    cout << "\n\tSecond Number";
+    for (i = 0; i < 5; i++)
     {
-        for (int j = i + 1; j < quizNo; j++)
-            if (beforeQuiz[i] < beforeQuiz[j])
-            {
-                int temp = beforeQuiz[i];
-                beforeQuiz[i] = beforeQuiz[j];
-                beforeQuiz[j] = temp;
-            }
+        cout << "\nEnter the " << i + 1 << " digit of your 2nd number: ";
+        cin >> b[i];
     }
-    //Total marks of all quizzes are
-    cout << "\nTotal Marks of quizzes before midTerms are : " << sum_before << "\n";
+    int n = sizeof(a) / sizeof(a[0]);
+    int m = sizeof(b) / sizeof(b[0]);
 
-    for (i = 0; i < quizNo; i++)
-    {
-        cout << "Marks of quiz sorted from higher to lower " << i + 1 << " is: " << beforeQuiz[i] << endl;
-    }
+    cout << calSum(a, b, n, m) << endl;
 
-    //Quizes After Mid Term
-    cout << "\nQuiz After MidTerm\n";
-    for (i = 0; i < quizNo; i++)
-    {
-
-        cout << "Please enter the marks of quiz " << i + 1 << " : ";
-        cin >> afterQuiz[i];
-        sum_after = sum_after + afterQuiz[i];
-    }
-
-    //Bubble Sort starts from here
-    for (int i = 0; i < quizNo; i++)
-    {
-        for (int j = i + 1; j < quizNo; j++)
-            if (afterQuiz[i] > afterQuiz[j])
-            {
-                int temp = afterQuiz[i];
-                afterQuiz[i] = afterQuiz[j];
-                afterQuiz[j] = temp;
-            }
-    }
-    //Total marks of all quizzes are
-    cout << "\nTotal Marks of quizzes after midTerms are : " << sum_after << "\n";
-
-    for (i = 0; i < quizNo; i++)
-    {
-        cout << "Marks of quiz sorted from lower to higher " << i + 1 << " is: " << afterQuiz[i] << endl;
-    }
-    //RESIDUAL
-    // cout << endl;
-    // //Print the quizzes marks upto mid term exam in decending order
-    // cout << "\nThe marks of quizzes from higher to lower  are given below" << endl;
-    // for (int i = no; i > 0; i--)
-    // {
-    //     cout << uptoMidTermQuizzes[i] << " ";
-    //     sum += uptoMidTermQuizzes[i]; //sum of quizzes before mid
-    // }
-    // cout << "\nSum of Quizzes upto mid is from higher to lower is:" << sum << endl;
-    //
-    // cout << "\nThe marks of quizzes from lower to higher are given below" << endl;
-    // //Print the quizzes marks upto mid term exam in acending order
-    // for (int j = 1; j <= midQuizzes; j++)
-    // {
-    //     cout << uptoMidTermQuizzes[j] << " "; // To print an array
-    // }
-    // cout << "\nSum of Quizzes upto mid is from lower to higher:" << sum << endl;
+    return 0;
 }

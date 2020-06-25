@@ -1,27 +1,37 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
+
 int main()
 {
+    int i, array1[5], array2[5], sum[6], temp = 0, carry = 0;
+    cout << "\tFirst number";
+    for (i = 0; i < 5; i++)
+    {
+        cout << "\nEnter the " << i + 1 << " digit of your 1st number: ";
+        cin >> array1[i];
+    }
+    cout << "\n\tSecond Number";
+    for (i = 0; i < 5; i++)
+    {
+        cout << "\nEnter the " << i + 1 << " digit of your 2nd number: ";
+        cin >> array2[i];
+    }
+    for (i = 4; i >= 0; i--)
+    {
+        sum[i] = array1[i] + array2[i];
+        if (sum[i] >= 10)
+        {
 
-    int num1[5], num2[5], mul[5], i, c;
-    cout << "Please enter first number: ";
-    for (i = 0; i < 5; i++)
-    {
-        cin >> num1[i];
+            carry = sum[i];
+            sum[i] = sum[i] % 10 + temp;
+            temp = carry / 10;
+            sum[i + 1] = sum[i + 1] + temp;
+        }
     }
-    cout << "Please enter second number: ";
+    cout << "\nSum is: ";
     for (i = 0; i < 5; i++)
     {
-        cin >> num2[i];
-    }
-    for (i = 0; i < 5; i++)
-    {
-        mul[i] = num1[i] * num2[i];
-    }
-    cout << "Multiplication of Arrays: ";
-    for (i = 0; i < 5; i++)
-    {
-        cout << mul[i] << " ";
+        cout << sum[i];
     }
 }
