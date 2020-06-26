@@ -26,7 +26,12 @@ int main()
             carry = sum[i];
             sum[i] = sum[i] % 10 + temp;
             temp = carry / 10;
-            sum[i + 1] = sum[i + 1] + temp;
+            if (sum[i] < 10)
+            {
+                continue;
+            }
+
+            temp = 0;
         }
     }
     cout << "\nSum is: ";
