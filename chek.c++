@@ -12,24 +12,24 @@ int main()
     case '+':
 
     {
-        int first[15], second[15], sum[15], c, n;
+        int arraySize;
 
-        cout << "Enter the number of elements in the array ";
-        cin >> n;
-
+        cout << "\nPlease Enter array Size: ";
+        cin >> arraySize;
+        int first[arraySize], second[arraySize], sum[arraySize], i;
         cout << "Enter elements of first array" << endl;
 
-        for (c = 0; c < n; c++)
-            cin >> first[c];
+        for (i = 0; i < arraySize; i++)
+            cin >> first[i];
 
         cout << "Enter elements of second array" << endl;
 
-        for (c = 0; c < n; c++)
-            cin >> second[c];
+        for (i = 0; i < arraySize; i++)
+            cin >> second[i];
 
         cout << "Sum of elements of the arrays:" << endl;
 
-        for (int i = (n - 1); i >= 0; i--)
+        for (i = (arraySize - 1); i >= 0; i--)
         {
             int total = 0;
             int tenth = 0;
@@ -42,7 +42,7 @@ int main()
                     total -= 10;
                 }
             }
-            if ((i + 1) == n)
+            if ((i + 1) == arraySize)
             {
                 sum[i + 1] = total;
             }
@@ -53,7 +53,7 @@ int main()
             sum[i] = tenth;
         }
 
-        for (int i = 0; i <= n; i++)
+        for (i = 0; i <= arraySize; i++)
         {
             if (sum[i] == 0)
             {
@@ -63,45 +63,45 @@ int main()
         }
 
         break;
-
+    }
     case '-':
     {
-        int array[15] = {0};
-        int array2[15] = {0};
-        int array3[15] = {0};
-        int i = 0, a;
-        int j = 0;
-        cout << "enter values of first array";
-        for (i = 0; i <= 14; i++)
+        int arraySize;
+        cout << "\nPlease Enter array Size: ";
+        cin >> arraySize;
+        int first[arraySize], second[arraySize], sub[arraySize];
+        int i = 0, j = 0;
+        cout << "Enter values of first array: \n";
+        for (i = 0; i < arraySize; i++)
         {
-            cin >> array[i];
+            cin >> first[i];
         }
-        cout << "enter values of second array";
-        for (i = 0; i <= 14; i++)
+        cout << "Enter values of second array: \n";
+        for (i = 0; i < arraySize; i++)
         {
-            cin >> array2[i];
+            cin >> second[i];
         }
 
-        for (i = 14; i >= 0; i--)
+        for (i = arraySize - 1; i >= 0; i--)
         {
             if (j != 0)
             {
-                array[i] = array[i] - 1;
+                first[i] = first[i] - 1;
                 j = 0;
             }
 
-            if (array[i] >= array2[i])
-                array3[i] = array[i] - array2[i];
-            if (array[i] < array2[i])
+            if (first[i] >= second[i])
+                sub[i] = first[i] - second[i];
+            if (first[i] < second[i])
             {
-                array[i] = array[i] + 10;
+                first[i] = first[i] + 10;
                 j++;
-                array3[i] = array[i] - array2[i];
+                sub[i] = first[i] - second[i];
             }
         }
-        for (i = 0; i <= 14; i++)
+        for (i = 0; i < arraySize; i++)
         {
-            cout << array3[i];
+            cout << sub[i];
         }
 
         break;
@@ -109,19 +109,19 @@ int main()
 
     case '*':
     {
-        int first[15], second[15], sum[30], c, n, i;
-        cout << "Enter the number of elements in the array ";
-        cin >> n;
+        int first[15], second[15], sum[30], arraySize, i;
+        cout << "\nPlease Enter array Size: ";
+        cin >> arraySize;
 
         cout << "Enter elements of first array" << endl;
 
-        for (c = 0; c < n; c++)
-            cin >> first[c];
+        for (i = 0; i < arraySize; i++)
+            cin >> first[i];
 
         cout << "Enter elements of second array" << endl;
 
-        for (c = 0; c < n; c++)
-            cin >> second[c];
+        for (i = 0; i < arraySize; i++)
+            cin >> second[i];
 
         cout << "Product of elements of the given two arrays:" << endl;
 
@@ -132,7 +132,7 @@ int main()
         }
 
         int count = 0;
-        for (int x = (n - 1); x >= 0; x--)
+        for (int x = (arraySize - 1); x >= 0; x--)
         {
             int chk = 0;
             int flag = 0;
@@ -140,7 +140,7 @@ int main()
             int fix = second[x];
             count++;
 
-            for (int i = (n - 1); i >= 0; i--)
+            for (int i = (arraySize - 1); i >= 0; i--)
             {
                 int total = 0;
                 int tenth = 0;
@@ -202,42 +202,42 @@ int main()
 
     case '/':
     {
-        int number1 = 0, number2, arraySize = 0, counter = 0;
+        int number1 = 0, number2, arraySize = 0, i = 0;
 
         cout << "\nEnter ArraySize: ";
         cin >> arraySize;
-        int array1[arraySize];
-        int array2[arraySize];
+        int first[arraySize];
+        int second[arraySize];
         cout << "\nArray1 elements: \n";
         do
         {
             cin >> number1;
 
-            array1[counter] = number1;
+            first[i] = number1;
 
-            counter++;
-        } while (counter < arraySize);
-        counter = 0;
+            i++;
+        } while (i < arraySize);
+        i = 0;
         cout << "\nArray2 elements: \n";
 
         do
         {
             cin >> number2;
-            array2[counter] = number2;
+            second[i] = number2;
 
-            counter++;
-        } while (counter < arraySize);
+            i++;
+        } while (i < arraySize);
 
         int final[arraySize];
         if (arraySize <= 10)
         {
             int k = 0;
             for (int i = 0; i < arraySize; i++)
-                k = 10 * k + array1[i];
+                k = 10 * k + first[i];
 
             int m = 0;
             for (int i = 0; i < arraySize; i++)
-                m = 10 * m + array2[i];
+                m = 10 * m + second[i];
 
             int result = k / m;
             cout << "\nResult: ";
@@ -248,7 +248,7 @@ int main()
 
             for (int i = 0; i < arraySize; i++)
             {
-                int c = array1[i] / array2[i];
+                int c = first[i] / second[i];
                 final[i] = c;
                 for (int j = 0; j < arraySize; ++j)
                 {
@@ -257,7 +257,6 @@ int main()
             }
         }
         return 0;
-    }
     }
     }
 }
