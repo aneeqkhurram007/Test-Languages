@@ -35,8 +35,9 @@ int main()
                         {
                             temp1 = temp[y];
                             temp[y] = temp[z];
-                            temp[z] = temp1 - 32;
+                            temp[z] = temp1;
                         }
+                        temp[z] = temp[z] - 32;
                     }
                     else
                     {
