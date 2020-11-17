@@ -2,7 +2,7 @@
 #include <fstream>
 
 using namespace std;
-string line;
+
 int main()
 {
     char text[100] = {'\0'};
