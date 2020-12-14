@@ -1,0 +1,5 @@
+sms Palindrome
+mahaM Palindrome
+World Not Palindrome
+Civic Palindrome
+Sad Not Palindrome
