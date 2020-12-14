@@ -36,8 +36,11 @@ int main()
             j++;
         }
     }
-    for (auto &&i : origArr)
+    for (int i = 0; i < 10; i++)
     {
-        cout << i << " ";
+        if (origArr[i] != 0)
+        {
+            cout << origArr[i] << " ";
+        }
     }
 }
