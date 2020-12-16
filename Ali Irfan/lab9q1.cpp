@@ -8,6 +8,7 @@ int main()
     cout << "Enter a number: ";
     cin >> num;
     int total = 0;
+
     for (int i = 1; i <= num; i++)
     {
         int factorial = 1;
@@ -29,7 +30,7 @@ int main()
         {
             total -= factor;
         }
-        }
+    }
 
     cout << "Total is = " << total << endl;
 }
