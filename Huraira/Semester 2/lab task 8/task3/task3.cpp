@@ -5,44 +5,48 @@ int main()
 {
     fstream file;
     file.open("output.txt");
-    int arr[10] = {10, 2, 5, 7, 6, 8, 4, 9, 11, 13};
+    int arr[10] = {0};
     cout << "Enter elements in array" << endl;
-    /*for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         cin >> arr[i];
-    }*/
+    }
     int Max = arr[0];
     int Min = arr[0];
 
     int secondMax = arr[0];
     int secondMin = arr[0];
 
+    int *ptr = arr;
+
     for (int i = 0; i < 10; i++)
     {
-        if (Max < arr[i])
+        if (Max < *(ptr + i))
         {
-            Max = arr[i];
+            Max = *(ptr + i);
         }
-        if (Min > arr[i])
+        if (Min > *(ptr + i))
         {
-            Min = arr[i];
+            Min = *(ptr + i);
         }
     }
 
     for (int i = 0; i < 10; i++)
     {
 
-        if (secondMax < arr[i] && arr[i] < Max)
+        if (secondMax < *(ptr + i) && *(ptr + i) < Max)
         {
-            secondMax = arr[i];
+            secondMax = *(ptr + i);
         }
 
-        if (secondMin > arr[i] && arr[i] > Min)
+        if (secondMin > *(ptr + i) && *(ptr + i) > Min)
         {
-            secondMin = arr[i];
+            secondMin = *(ptr + i);
         }
     }
 
+    file << "Second min is : " << secondMin << endl;
+    file << "Second max is : " << secondMax << endl;
     cout << "Second min is : " << secondMin << endl;
     cout << "Second max is : " << secondMax << endl;
 }
