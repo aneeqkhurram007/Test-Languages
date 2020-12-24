@@ -11,23 +11,24 @@ int main()
     cout << "Enter a substring: ";
     cin.getline(subStr, 25);
 
-    int subStrlen = 0;
+    char *ptr = str;
+    char *subPtr = subStr;
 
-    while (subStr[subStrlen] != '\0')
+    int subStrlen = 0;
+    while (*(subPtr + subStrlen) != '\0')
     {
         subStrlen++;
     }
     int Strlen = 0;
-    while (str[Strlen])
+    while (*(str + Strlen) != '\0')
     {
         Strlen++;
     }
-
     for (int i = 0; i < Strlen; i++)
     {
-        if (subStr[0] == str[i])
+        if (*(subPtr + 0) == *(ptr + i))
         {
-            for (int k = 0; k < subStrlen && (subStr[k] == str[i + k]); k++)
+            for (int k = 0; k < subStrlen && (*(subPtr + k) == *(ptr + i + k)); k++)
             {
 
                 if (k == (subStrlen - 1))
