@@ -1,18 +1,23 @@
 #include <iostream>
 #include <string>
+void Freq(char *ptr, char *subPtr);
 using namespace std;
+char str[100];
+char subStr[25];
+
 int main()
 {
-    char str[100];
     cout << "Enter a string: ";
     cin.getline(str, 100);
 
-    char subStr[25];
     cout << "Enter a substring: ";
     cin.getline(subStr, 25);
-
-    char *ptr = str;
-    char *subPtr = subStr;
+    Freq(str, subStr);
+}
+void Freq(char *ptr, char *subPtr)
+{
+    ptr = str;
+    subPtr = subStr;
 
     int subStrlen = 0;
     while (*(subPtr + subStrlen) != '\0')
@@ -24,6 +29,9 @@ int main()
     {
         Strlen++;
     }
+
+    int frequency = 0;
+
     for (int i = 0; i < Strlen; i++)
     {
         if (*(subPtr + 0) == *(ptr + i))
@@ -33,10 +41,12 @@ int main()
 
                 if (k == (subStrlen - 1))
                 {
-                    cout << "Start Index = " << (i + 1) << endl;
-                    cout << "End Index = " << (i + k + 1) << endl;
+                    cout << "Start Index = " << (i) << endl;
+                    cout << "End Index = " << (i + k) << endl;
+                    frequency++;
                 }
             }
         }
     }
+    cout << "Frequency : " << frequency << endl;
 }
