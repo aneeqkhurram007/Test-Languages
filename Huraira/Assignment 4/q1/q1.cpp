@@ -6,13 +6,11 @@ int main()
     fstream file;
     file.open("data.txt");
     int *arr = new int(10);
-    int i;
     int *even = new int(5);
     int *odd = new int(5);
-    for (i = 0; !file.eof() && i < 10; i++)
+    for (int i = 0; !file.eof() && i < 10; i++)
     {
         file >> arr[i];
-        cout << arr[i];
     }
     for (int j = 0, e = 0, o = 0; j < 10; j++)
     {
@@ -32,7 +30,7 @@ int main()
     {
         for (int e = 0; e < 5; e++)
         {
-            if (even[j] > even[e])
+            if (even[j] < even[e])
             {
                 int temp = even[j];
                 even[j] = even[e];
@@ -44,7 +42,7 @@ int main()
             if (odd[j] > odd[o])
             {
                 int temp = odd[j];
-                odd[j] = even[o];
+                odd[j] = odd[o];
                 odd[o] = temp;
             }
         }
@@ -61,5 +59,4 @@ int main()
     delete[] even;
     delete[] odd;
     delete[] arr;
-    cout << i << endl;
 }
