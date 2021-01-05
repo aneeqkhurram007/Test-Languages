@@ -10,7 +10,8 @@ int main()
     ofstream file;
     file.open(fileName);
 
-    int arr[100], oneDig[100] = {0}, twoDig[100] = {0};
+    int *arr = new int(100);
+    int oneDig[100] = {0}, twoDig[100] = {0};
 
     cout << "Enter data in file: " << endl;
     for (int i = 0, o = 0, t = 0; true; i++)
@@ -43,4 +44,5 @@ int main()
     {
         cout << twoDig[i] << " ";
     }
+    delete[] arr;
 }
