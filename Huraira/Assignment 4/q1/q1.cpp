@@ -5,23 +5,24 @@ int main()
 {
     fstream file;
     file.open("data.txt");
-    int *arr = new int(10);
-    int *even = new int(5);
-    int *odd = new int(5);
+    int arr[10] = {0};
+    int even[10] = {0};
+    int odd[10] = {0};
     for (int i = 0; !file.eof() && i < 10; i++)
     {
         file >> arr[i];
     }
-    for (int j = 0, e = 0, o = 0; j < 10; j++)
+
+    for (int i = 0, e = 0, o = 0; i < 10; i++)
     {
-        if (arr[j] % 2 == 0)
+        if (arr[i] % 2 == 0)
         {
-            even[e] = arr[j];
+            even[e] = arr[i];
             e++;
         }
         else
         {
-            odd[o] = arr[j];
+            odd[o] = arr[i];
             o++;
         }
     }
@@ -49,14 +50,11 @@ int main()
     }
     for (int j = 0; j < 5; j++)
     {
-        cout << even[j] << " ";
+        arr[j] = even[j];
+        arr[j + 5] = odd[j];
     }
-    for (int j = 0; j < 5; j++)
+    for (int i = 0; i < 10; i++)
     {
-        cout << odd[j] << " ";
+        cout << arr[i] << " ";
     }
-
-    delete[] even;
-    delete[] odd;
-    delete[] arr;
 }
