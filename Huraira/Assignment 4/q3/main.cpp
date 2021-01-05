@@ -3,10 +3,10 @@
 
 using namespace std;
 
-char even[20] = {0};
+int *even = new int(20);
 int e = 0;
 
-char odd[20] = {0};
+int *odd = new int(20);
 int o = 0;
 
 void length(char arr[]);
@@ -32,6 +32,9 @@ int main()
 
     cout << "\nWords with even length: " << e << endl;
     cout << "\nWords with odd length: " << o << endl;
+
+    delete[] even;
+    delete[] odd;
 }
 void length(char arr[])
 {
