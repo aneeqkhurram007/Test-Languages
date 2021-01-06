@@ -104,6 +104,9 @@ int main()
             printf("%d ", arr1[j]);
         }
     }
+    char gender[50];
+    printf("Enter a gender: ");
+    scanf("%s", gender);
     struct task1
     {
         char name[20];
@@ -126,6 +129,20 @@ int main()
     // printf("%d", sizeof(x.ch));
     // printf("%d", sizeof(marks));
     // printf("%d", sizeof(d));
+
+    struct Foo
+    {
+        int x;
+        float y;
+    } x;
+    x str;
+    funStr(struct Foo x);
+}
+struct funStr(struct Foo x)
+{
+    printf("%d", x.x);
+    printf("%d", x.y);
+    return x;
 }
 void func(int arr[][])
 {
