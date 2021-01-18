@@ -19,8 +19,8 @@ int main()
     }
     else
     {
-        int MatA[rowA][colA], MatB[rowB][colB];
-        int resMat[rowB][colA] = {0};
+        int MatA[rowA][colB] = {{1, 2, 3}, {4, 5, 6}}, MatB[rowB][colB] = {{9, 1}, {7, 2}, {8, 4}};
+        int resMat[10][10] = {0};
         cout << "Enter elements in Matrix A: " << endl;
         for (int i = 0; i < rowA; i++)
         {
@@ -37,15 +37,38 @@ int main()
                 cin >> MatA[i][j];
             }
         }
-        for (int i = 0, j; i < rowB; i++)
+        for (int i = 0; i < rowA; i++)
+        {
+            for (int j = 0; j < colB; j++)
+            {
+                resMat[i][j] = 0;
+            }
+        }
+
+        float average = 0;
+        int count = 0;
+        for (int i = 0; i < rowA; ++i)
+            for (int j = 0; j < colB; ++j)
+                for (int k = 0; k < colA; ++k)
+                {
+                    resMat[i][j] += MatA[i][k] * MatB[k][j];
+                }
+
+        cout << endl
+             << "Output Matrix: " << endl;
+        for (int i = 0; i < rowA; ++i)
         {
 
-            for (j = 0; j < colA; j++)
+            for (int j = 0; j < colB; ++j)
             {
-                resMat[i][j] += MatA[i][j] * MatB[i][j];
-                cout << resMat[i][j] << " ";
+                count++;
+                average += resMat[i][j];
+                cout << " " << resMat[i][j];
+                if (j == colB - 1)
+                    cout << endl;
             }
-            cout << "\n";
         }
+        average /= count;
+        cout << "\nAverage is: " << average;
     }
 }
