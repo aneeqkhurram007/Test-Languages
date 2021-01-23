@@ -1,30 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
 using namespace std;
 int serial[10] = {0};
 char key[10] = {'T', 'F', 'T', 'T', 'T', 'F', 'T', 'F', 'F', 'T'};
-
-void check(int id, int limit)
-{
-    for (int i = 0; i < limit; i++)
-    {
-        if (id == serial[i])
-        {
-            cout << "Already assigned to someone. Try Again:  \n";
-            cin >> serial[limit];
-            check(serial[limit], limit);
-        }
-    }
-}
-void changeKey()
-{
-    cout << "Enter key answers\n";
-    for (int i = 0; i < 10; i++)
-    {
-        cin >> key[i];
-    }
-}
 
 int main()
 {
@@ -33,7 +11,14 @@ int main()
     for (int i = 0; i < 10; i++)
     {
         cin >> serial[i];
-        check(serial[i], i);
+        for (int j = 0; j < j; j++)
+        {
+            if (serial[j] == serial[i])
+            {
+                cout << "Already assigned to someone. Try Again:  \n";
+                cin >> serial[i];
+            }
+        }
     }
     char answers[10] = {0};
     for (int i = 0; i < 10; i++)
@@ -84,6 +69,10 @@ int main()
     cin >> choice;
     if (choice == 'y')
     {
-        changeKey();
+        cout << "Enter key answers\n";
+        for (int i = 0; i < 10; i++)
+        {
+            cin >> key[i];
+        }
     }
 }
