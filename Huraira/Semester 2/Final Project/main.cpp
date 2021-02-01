@@ -11,25 +11,25 @@ void display(int **table, char **prodName)
          << endl;
     for (int i = 0; i < SIZE; i++)
     {
-        if (i == 0)
+        if (i == 0 || i == 3)
         {
             cout << prodName[i] << "\t\t";
-            file << prodName[i] << "\t\t";
+            // file << prodName[i] << "\t\t";
         }
         else
         {
             cout << prodName[i] << "\t";
-            file << prodName[i] << "\t";
+            // file << prodName[i] << "\t";
         }
 
         for (int j = 0; j < (SIZE - 1); j++)
         {
 
             cout << table[j][i] << "\t";
-            file << table[j][i] << "\t";
+            // file << table[j][i] << "\t";
         }
         cout << endl;
-        file << endl;
+        // file << endl;
     }
 }
 int prodValid(int numOfProd)
@@ -107,9 +107,11 @@ float billing(int *prodnum, int **table, int *quantity, int *temp)
 }
 void mainDisplay(int numOfProd, int *prodnum, int *temp, int **table, char **prodName)
 {
-    for (int i = 0; i < numOfProd; i++)
+    file << "-------------------------------" << endl;
+
+    for (int i = 0; i < SIZE; i++)
     {
-        if (i == 0)
+        if (i == 0 || i == 3)
         {
             cout << prodName[i] << "\t\t";
             file << prodName[i] << "\t\t";
@@ -143,7 +145,7 @@ int main()
         prodName[0] = new char[50]{'S', 'o', 'a', 'p', '\0'};
         prodName[1] = new char[50]{'H', 'a', 'n', 'd', ' ', 'W', 'a', 's', 'h', '\0'};
         prodName[2] = new char[50]{'D', 'i', 's', 'h', ' ', 'W', 'a', 's', 'h', '\0'};
-        prodName[3] = new char[50]{'T', 'a', 'b', 'l', 'e', ' ', 'C', 'l', 'e', 'a', 'n', 'e', 'r', '\0'};
+        prodName[3] = new char[50]{'S', 'h', 'a', 'm', 'p', 'o', 'o', '\0'};
     }
     table[1] = new int[SIZE]{60, 200, 150, 350}; //retails
     table[2] = new int[SIZE]{10, 20, 30, 40};    //quant
