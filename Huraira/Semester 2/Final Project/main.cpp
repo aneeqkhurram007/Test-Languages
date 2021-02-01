@@ -48,7 +48,6 @@ int prodValid(int numOfProd)
 void prodNumValid(int numOfProd, int *prodnum, int *quantity, int **table)
 {
     int flag = 0;
-    cout << "Num of Prod " << numOfProd << endl;
     for (int i = 0; i < numOfProd; i++)
     {
         cout << "\nEnter product number : ";

@@ -1,0 +1,14 @@
+Soap		101	60	10	
+Hand Wash	102	200	20	
+Dish Wash	103	150	30	
+Table Cleaner	104	350	40	
+Soap		101	60	3	
+Hand Wash	102	200	3	
+Dish Wash	103	150	9	
+Table Cleaner	104	350	10	
+Soap		101	60	3	
+Hand Wash	102	200	3	
+Dish Wash	103	150	9	
+Table Cleaner	104	350	10	
+Soap		101	60	0	
+Hand Wash	102	200	0	
