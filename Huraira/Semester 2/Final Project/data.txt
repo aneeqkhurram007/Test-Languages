@@ -1,10 +1,4 @@
 -------------------------------
-Soap		101	60	0	
-Hand Wash	102	200	8	
-Dish Wash	103	150	30	
-Shampoo		104	350	24	
--------------------------------
-Soap		101	60	0	
-Hand Wash	102	200	8	
-Dish Wash	103	150	23	
-Shampoo		104	350	24	
+Product Code: 101	Retail Price: 60	Quantity: 0
+Product Code: 102	Retail Price: 200	Quantity: 20
+Product Code: 103	Retail Price: 150	Quantity: 30
