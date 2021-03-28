@@ -10,43 +10,76 @@ LinkedList *insertItem(LinkedList *head, int data)
 {
     LinkedList *ptr = new LinkedList();
     ptr->data = data;
-
-    // if (head == NULL)
-    // {
-    //     head = ptr;
-    // }
-    // else
-    // {
-    // LinkedList *p = head;
-
-    // while (p->next != NULL)
-    // {
-    //     p = p->next;
-    // }
-    // ptr->next = p->next;
-    // p->next = ptr;
-
-    // return head;
+    LinkedList *p = head;
+    if (head->data == NULL)
+    {
+        head = ptr;
+    }
+    else
+    {
+        while (p->next != NULL)
+        {
+            p = p->next;
+        }
+        ptr->next = NULL;
+        p->next = ptr;
+    }
+    return head;
 }
 void traversal(LinkedList *head)
 {
     LinkedList *p = head;
-    while (p->next != NULL)
+    while (true)
     {
         cout << p->data << " ";
+        if (p->next == NULL)
+        {
+            return;
+        }
+        p = p->next;
+    }
+}
+void bubbleSort(LinkedList *head)
+{
+    LinkedList *p = head;
+    while (true)
+    {
+        LinkedList *temp = p;
+        while (true)
+        {
+            if (p->data > temp->data)
+            {
+                int ctemp = p->data;
+                p->data = temp->data;
+                temp->data = ctemp;
+            }
+
+            if (temp->next == NULL)
+            {
+                break;
+            }
+            temp = temp->next;
+        }
+
+        if (p->next == NULL)
+        {
+            return;
+        }
+        p = p->next;
     }
 }
 int main()
 {
-    int data;
     LinkedList *head = new LinkedList();
-    head->next = NULL;
     for (int i = 0; i < 10; i++)
     {
-        cout << "Enter data # " << i + 1 << " : ";
-        cin >> data;
-        head = insertItem(head, data);
+        head = insertItem(head, 10 - i);
     }
+    cout << "Before bubble Sort" << endl;
     traversal(head);
+    cout << "\nAfter buuble Sort" << endl;
+    bubbleSort(head);
+    traversal(head);
+
     return 0;
 }
