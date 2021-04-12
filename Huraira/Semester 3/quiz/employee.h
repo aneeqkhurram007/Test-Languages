@@ -1,5 +1,4 @@
 #include <iostream>
-
 #pragma once
 using namespace std;
 class employee
@@ -11,12 +10,14 @@ private:
     char *rank = new char(25);
 
 public:
-    employee(char *name, double salary)
+    employee(char *name, double salary, int rollNumber, char *rank)
     {
 
         cout << "Constructor Called" << endl;
         this->name = name;
         this->salary = salary;
+        this->rollNumber = rollNumber;
+        this->rank = rank;
     }
     employee(employee &employee)
     {
