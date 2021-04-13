@@ -1,19 +1,11 @@
-#pragma once
 #include <iostream>
+#pragma once
 using namespace std;
-class car
+class Car
 {
-
-    char *name;
-    int model;
-
+private:
+    /* data */
 public:
-    car(char *name = new char[25], int model = 0);
-    car(car &car);
-    char *getName();
-    void setName(char *name);
-    int getModel();
-    void setModel(int model);
-    void display();
-    ~car();
+    Car(/* args */);
+    ~Car();
 };
