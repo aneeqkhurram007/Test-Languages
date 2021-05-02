@@ -3,12 +3,13 @@
 using namespace std;
 int main()
 {
-    fstream file;
+    fstream file, file2;
     int i = 0;
     bool flag = true;
     char c1;
     char c2[10] = {'\0'};
     file.open("data.txt");
+    file2.open("output.txt");
 
     if (file.is_open())
     {
@@ -36,6 +37,7 @@ int main()
                 for (int j = 0; c2[j] != '\0'; j++)
                 {
                     cout << c2[j];
+                    file2 << c2[j];
                 }
                 cout << endl;
             }
