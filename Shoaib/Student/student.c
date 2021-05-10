@@ -73,6 +73,7 @@ int main()
             count++;
             break;
         case 2:
+            printf("\nCurrent Record Removed");
             count--;
 
             break;
