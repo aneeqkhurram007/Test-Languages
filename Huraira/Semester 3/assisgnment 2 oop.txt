@@ -1,0 +1,358 @@
+#include<iostream>
+
+#include<string>
+
+using namespace std;
+
+
+class MyString {
+
+
+private:
+   
+ int size; // Holds the allocated space size
+ 
+ int count; // Holds the count current number of elements
+
+
+public:
+
+
+    char* str;  // Contains string of characters  // Default constructor for setting default values 
+
+   
+ MyString() {
+        //
+ Setting default array size 100 if not explicitly value is passed 
+ 
+ str = new char[100];
+ 
+ size = 100;  // Set total size 5
+    
+ count = 0; // No element is present initially to set it to 0
+  
+ }
+
+
+ // Parameterized constructor for initializing the array with user defined size 
+  
+  MyString(int size) {
+
+   
+  str = new char[size];
+ 
+  this->size = size;
+
+  count = 0;
+    
+}
+   
+ void add(char b) // Function for adding a new string value in the array
+    
+{
+        
+str[count] = b;
+        
+count++;
+        
+str[count] = '\0';    // initially count is 0 to add a value at index 0 and then incrememt the index by 1 
+    
+}
+ // Returns the number of present elements in the array  
+    
+int length() {
+        
+return count;
+    
+}
+    void clear()  // clear function to put null in place of other chars and set count to 0  
+    
+{
+        
+for (int i = 0; i < size; i++)
+        
+{
+            
+str[i] = '\0';
+        
+}
+        
+count = 0;
+    
+}
+    
+MyString(const MyString& strn2, int st, int end)
+    
+{
+        
+count = 0;
+        
+int i = 0;
+        
+size = (end - st) + 2;
+        
+str = new char[size];
+        
+for (st; st <= end; st++)
+        
+{
+            
+str[i] = strn2.str[st];
+            
+i++;
+            
+count++;
+        
+}
+        
+str[i] = '\0';
+    
+}
+    
+MyString& operator =(MyString& strn1)
+    
+{
+        
+str = new char[strlen(strn1.str) + 1];
+        
+strcpy_s(str, strlen(strn1.str) + 1, strn1.str);
+        
+return *this;
+    
+}
+ MyString operator+(const MyString& strn2)
+    
+{
+        
+MyString strn3;
+        
+strcat_s(strn3.str, 100, this->str);
+        
+strcat_s(strn3.str, 100, strn2.str);
+        
+return strn3;
+    
+}
+    
+MyString operator++()   // pre increment overloading function  
+    
+{
+        
+MyString obj;
+        
+obj.str = str;
+                
+for (inti=0 ;i < size; i++)
+        
+{
+            
+str[i]++;
+        
+}
+        
+str[i] = '\0';
+        
+return obj;
+    
+}
+    
+MyString& operator ++(int) //post increment overloading function 
+    
+{
+        
+int i = 0;
+        
+for (i; i < size; i++)
+        
+{
+            
+str[i]++;
+        
+}
+        
+return *this;
+    
+}
+    
+MyString operator--() // pre decrement overloading function
+    
+{
+       
+ MyString obj;
+        
+obj.str = str;
+        
+int i = 0;
+        
+for (i; i < size; i++)
+        
+{
+  str[i]--;
+        
+}
+        
+str[i] = '\0';
+        
+return obj;
+    
+}
+   
+ MyString& operator--(int) // post decrement overloading function
+    
+{
+        
+for (int i = 0; i < size; i++)
+        
+{
+            
+str[i]--;
+       
+ }
+       
+ return *this;
+    
+}
+    
+char* getstr()const   // getter 
+   
+ {
+       
+ char* array = new char[strlen(str) + 1];
+        
+strcpy_s(array, strlen(str) + 1, str);
+        
+return array;
+    
+}
+
+};
+
+void print(const MyString& strn1) //printing the string
+
+{
+    
+if (strn1.getstr())
+    
+{
+        
+cout << strn1.getstr();
+    
+}
+    
+else
+    
+{
+       
+cout << "array is empty" << endl;
+    
+}
+
+}
+int main()
+{
+MyString str1;// make a default string of 100 size
+str1.add('[');//insert at position 1 or index 0
+str1.add('A');//insert at position 2 or index 1
+str1.add('B');//insert at position 3 or index 2
+str1.add('C');//insert at position 4 or index 3
+str1.add('D');//insert at position 5 or index 4
+str1.add('E');//insert at position 6 or index 5
+str1.add('F');//insert at position 7 or index 6
+str1.add('G');//insert at position 8 or index 7
+str1.add('h');//insert at position 9 or index 8
+str1.add('i');//insert at position 10 or index 9
+str1.add('j');//insert at position 11 or index 10
+str1.add('k');//insert at position 12 or index 11
+str1.add('l');//insert at position 13 or index 12
+str1.add('m');//insert at position 14 or index 13
+str1.add('n');//insert at position 15 or index 14
+str1.add('o');//insert at position 16 or index 15
+str1.add('p');//insert at position 17 or index 16
+str1.add(']');//insert at position 18 or index 17
+cout << "\nstr1\n";
+cout << endl;
+print(str1);
+cout << endl;
+cout << "Lenghth of str1 is = " << str1.length() << endl;
+cout << endl;
+cout << "\nstr2\n";
+MyString str2(str1, 1, 8);//should copy str1 to str2 from position 1 to 8
+print(str2);
+cout << endl;
+cout << "\nLenghth of str2 is = " << str2.length() << endl;
+cout << "\nstr4\n";
+const MyString str4; //It should accesss all constant functions
+print(str4);
+cout << endl;
+cout << "\nLenghth of str4 is =" << str4.length() << endl;
+str1.clear();//It should clear the string by placing null char at all
+indexes and setting count to zero
+cout << "\nAfter clearing str1\n";
+print(str1);
+cout << endl;
+str1.add('$');
+cout << endl;
+cout << "\nAfter adding $ to str1\n";
+print(str1);
+cout << endl;
+MyString str3;
+str3 = str1 + str2;//It will concatenate both the strings and assign it to
+str3
+cout << "str3\n";
+print(str3);
+cout << endl;
+MyString str5(5);//should make an empty array of size 5
+str5.add('a');
+str5.add('B');
+str5.add('c');
+str5.add('D');
+str5.add('e');
+cout << "\nstr5\n";
+print(str5);
+cout << endl;
+//str5[0] = str5[1] + 1; //add 1 to the char at 1st index and assign it to
+0th index
+print(str5);
+cout << endl;
+print(str5++);//post-increment
+cout << endl;
+print(++str5);//pre-increment
+cout << endl;
+print(--str5);//pre-decrement
+cout << endl;
+print(str5--);//post-decrement
+cout << endl;
+MyString str8;
+str8 = str5;//assigning str5 to str8
+cout << "str8\n";
+print(str8);
+cout << endl;
+MyString str9;
+str9.add('B');
+str9.add('I');
+str9.add('L');
+str9.add('A');
+str9.add('L');
+str9.add(' ');
+str9.add('I');
+str9.add('S');
+str9.add('H');
+str9.add('F');
+str9.add('A');
+str9.add('Q');
+cout << "str9\n";
+++++str9; //check with return by value and return by reference both
+print(str9);
+cout << endl;
+MyString str10;
+MyString str11;
+(str11 = str10) = str9; //check with return by value and return by
+reference both
+cout << "str10\n";
+print(str10);
+cout << endl;
+cout << "str11\n";
+print(str11);
+cout << endl;
+return 0;
+}
