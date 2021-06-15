@@ -145,6 +145,7 @@ main proc
     mov ah,9
     lea dx,new
     int 21h
+    
     mov ah,1
     int 21h
     mov bl,al
@@ -205,67 +206,51 @@ main proc
     lea dx,fivehun
     int 21h
      
-    mov ax, fiveH
-    sub availBal, ax
-    sub totBal, ax 
+    
      
     mov ah,9
     lea dx,one
     int 21h 
     
-        mov ax, oneT
-    sub availBal, ax
-    sub totBal, ax 
      
     
     mov ah,9
     lea dx,three
     int 21h
     
-        mov ax, threeT
-    sub availBal, ax
-    sub totBal, ax 
-     
+    
     
     mov ah,9
     lea dx,five
     int 21h
     
-        mov ax, fiveT
-    sub availBal, ax
-    sub totBal, ax 
-     
+   
     
     mov ah,9
     lea dx,ten
     int 21h    
     
-        mov ax, tenT
-    sub availBal, ax
-    sub totBal, ax 
+    
      
     
     mov ah,9
     lea dx,fiften
     int 21h
              
-                 mov ax, fifT
-    sub availBal, ax
-    sub totBal, ax 
+      
      
              
     mov ah,9
     lea dx,tweenty
     int 21h
     
-        mov ax, twenT
-    sub availBal, ax
-    sub totBal, ax 
+    
      
     
     mov ah,9
     lea dx,new
     int 21h
+    
     mov ah,1
     int 21h
     mov bl,al 
@@ -316,7 +301,11 @@ main proc
     mov ah,9
     lea dx,new
     int 21h
-    
+          
+    mov ax, fiveH
+    sub totBal, ax
+    sub availBal, ax      
+          
     mov ah,9
     lea dx,totalBal
     int 21h
@@ -349,7 +338,11 @@ main proc
     mov ah,9
     lea dx,new
     int 21h 
-    
+     
+     mov ax, oneT
+    sub totBal, ax
+    sub availBal, ax 
+     
     mov ah,9
     lea dx,totalBal
     int 21h
@@ -380,6 +373,10 @@ main proc
     mov ah,9
     lea dx,new
     int 21h 
+    
+     mov ax, threeT
+    sub totBal, ax
+    sub availBal, ax
     
     mov ah,9
     lea dx,totalBal
@@ -412,6 +409,10 @@ main proc
     lea dx,new
     int 21h 
     
+     mov ax, fiveT
+    sub totBal, ax
+    sub availBal, ax
+    
     mov ah,9
     lea dx,totalBal
     int 21h
@@ -442,6 +443,10 @@ main proc
     mov ah,9
     lea dx,new
     int 21h 
+    
+     mov ax, tenT
+    sub totBal, ax
+    sub availBal, ax
     
    mov ah,9
     lea dx,totalBal
@@ -474,6 +479,10 @@ main proc
     lea dx,new
     int 21h  
     
+     mov ax, fifT
+    sub totBal, ax
+    sub availBal, ax
+    
    mov ah,9
     lea dx,totalBal
     int 21h
@@ -504,7 +513,11 @@ main proc
     mov ah,9
     lea dx,new
     int 21h
-    
+     
+      mov ax, twenT
+    sub totBal, ax
+    sub availBal, ax
+     
    mov ah,9
     lea dx,totalBal
     int 21h
@@ -584,62 +597,46 @@ main proc
     lea dx,fivehun
     int 21h
      
-    mov ax, fiveH
-    sub availBal, ax
-    sub totBal, ax 
+    
      
     mov ah,9
     lea dx,one
     int 21h 
     
-        mov ax, oneT
-    sub availBal, ax
-    sub totBal, ax 
-     
+    
     
     mov ah,9
     lea dx,three
     int 21h
     
-        mov ax, threeT
-    sub availBal, ax
-    sub totBal, ax 
+  
      
     
     mov ah,9
     lea dx,five
     int 21h
     
-        mov ax, fiveT
-    sub availBal, ax
-    sub totBal, ax 
+   
      
     
     mov ah,9
     lea dx,ten
     int 21h    
     
-        mov ax, tenT
-    sub availBal, ax
-    sub totBal, ax 
      
     
     mov ah,9
     lea dx,fiften
     int 21h
              
-                 mov ax, fifT
-    sub availBal, ax
-    sub totBal, ax 
+     
      
              
     mov ah,9
     lea dx,tweenty
     int 21h
     
-        mov ax, twenT
-    sub availBal, ax
-    sub totBal, ax 
+   
     
     mov ah,9
     lea dx,new
@@ -736,82 +733,9 @@ main proc
     int 21h 
     mov ah,4ch
     int 21h
-    main endp 
-    decimalInput proc 
-
-push bx
-push cx
-push dx
-inputStart:
-
-mov ah, 2
-mov dl, ' '
-int 21h
-
-xor bx, bx
-xor cx, cx
-
-mov ah, 1
-int 21h
-
-cmp al, '-'
-je minus
-
-cmp al, '+'
-je plus
-jmp repeat
-
-minus:
-mov cx, 1
-plus:
-int 21h
-
-repeat:
-
-cmp al, '0'
-jnge nonDigit
-cmp al, '9'
-jnle nonDigit
-
-and ax, 000fh
-push ax
-
-mov ax,10
-mul bx
-pop bx
-add bx, ax
-
-mov ah, 1
-int 21h
-cmp al, 0dh
-jne repeat
-
-mov ax, bx
-or cx, cx
-
-je exitT
-neg ax
-
-exitT:
-
-pop dx
-pop cx
-pop bx
-ret
-
-nonDigit:
-
-mov ah, 2
-mov dl, 0dh
-int 21h
-mov dl, 0ah
-int 21h
-jmp inputStart
-ret
-decimalInput endp 
+    main endp  
     
-    
-    
+   
 decimalOutput proc
 
 push  ax
