@@ -1,9 +1,24 @@
-#include "Card.h"
-#include "CheckingAccount.h"
+#include "ATM.h"
+// #include "CheckingAccount.h"
 int main()
 {
 
-    Card card(73066);
-    CheckingAccount bank("HBL", "Lahore", 73066, 3.5);
-    bank.display();
+    // BankAccount bank;
+    Card card;
+    User user;
+    cout << "Enter User Details (Name,PhoneNumber,Address\nBankName,Branch,TotalCash,InterestRate\nCardNumber,PIN): " << endl;
+    cin >> user;
+    cout << user;
+
+    cout << "Enter card details: " << endl;
+    cin >> card;
+
+    ATM atm(user, card);
+    atm.validate();
+    // cout << card;
+    // // BankAccount bank("HBL", "Lahore", 73066);
+    // bank.display();
+    // cout << "Enter values in Bank: " << endl;
+    // cin >> bank;
+    // cout << bank;
 }

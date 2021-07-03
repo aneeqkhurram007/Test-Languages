@@ -1,13 +1,11 @@
 #include "User.h"
 User::User(const char *Name,
-           int PhoneNumber, const char *Address, SavingAccount saving, Card card)
+           int PhoneNumber, const char *Address)
 {
 
     setName(Name);
     setAddress(Address);
     setPhoneNumber(PhoneNumber);
-    setAccount(saving);
-    setCard(card);
 }
 User::User(const User &obj)
 {
@@ -81,4 +79,12 @@ void User::display()
     cout << "Address: " << getAddress() << endl;
     cout << " Account: " << getAccount() << endl;
     cout << "Card: " << getCard() << endl;
+}
+User::~User()
+{
+    delete[] Name;
+    Name = NULL;
+
+    delete[] Address;
+    Address = NULL;
 }

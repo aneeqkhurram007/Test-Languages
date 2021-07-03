@@ -1,5 +1,6 @@
 #include "SavingAccount.h"
-SavingAccount ::SavingAccount(const char *BankName, const char *Branch, float TotalCash, float interestRate) : BankAccount(BankName, Branch, TotalCash)
+SavingAccount ::SavingAccount(const char *BankName, const char *Branch,
+                              float TotalCash, float interestRate) : BankAccount(BankName, Branch, TotalCash)
 {
     setInterestRate(interestRate);
 }

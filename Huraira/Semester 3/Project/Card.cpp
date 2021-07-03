@@ -33,6 +33,11 @@ int Card::CardNumberGenerator()
 
     return x;
 }
+bool Card::operator==(const Card &obj)
+{
+    return this->getCardNumber() == obj.getCardNumber() && this->getPINNumber() == obj.getPINNumber();
+}
+
 Card ::~Card()
 {
 }

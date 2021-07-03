@@ -18,5 +18,16 @@ public:
 
     int CardNumberGenerator();
 
+    friend ostream &operator<<(ostream &output, const Card &obj)
+    {
+        output << "Card Details: " << obj.getCardNumber() << " PIN Number: " << obj.getPINNumber() << endl;
+        return output;
+    }
+    friend istream &operator>>(istream &input, Card &obj)
+    {
+        input >> obj.CardNumber >> obj.PIN;
+        return input;
+    }
+    bool operator==(const Card &obj);
     ~Card();
 };

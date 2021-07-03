@@ -23,5 +23,23 @@ public:
 
     void display();
 
+    friend ostream &operator<<(ostream &output, const BankAccount &obj)
+    {
+        output << "BankName: " << obj.getBankName() << " Branch: " << obj.getBranch()
+               << " Total Cash: " << obj.getTotalCash();
+        return output;
+    }
+    friend istream &operator>>(istream &input, BankAccount &obj)
+    {
+        char *BankName = new char[25];
+        char *Branch = new char[25];
+        int TotalCash;
+        input >> BankName >> Branch >> TotalCash;
+        obj.setBankName(BankName);
+        obj.setBranch(Branch);
+        obj.setTotalCash(TotalCash);
+        return input;
+    }
+
     ~BankAccount();
 };
