@@ -54,7 +54,7 @@ int User ::getPhoneNumber() const
     return this->PhoneNumber;
 }
 
-void User::setAccount(SavingAccount account)
+void User::setAccount(const SavingAccount &account)
 {
     this->account = account;
 }
@@ -63,7 +63,7 @@ SavingAccount User::getAccount() const
     return this->account;
 }
 
-void User::setCard(Card card)
+void User::setCard(const Card &card)
 {
     this->card = card;
 }

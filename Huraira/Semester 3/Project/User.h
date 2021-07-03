@@ -21,9 +21,9 @@ public:
     int getPhoneNumber() const;
     void setAddress(const char *Address);
     char *getAddress() const;
-    void setAccount(SavingAccount account);
+    void setAccount(const SavingAccount &account);
     SavingAccount getAccount() const;
-    void setCard(Card card);
+    void setCard(const Card &card);
     Card getCard() const;
     friend ostream &operator<<(ostream &output, const User &obj)
     {
