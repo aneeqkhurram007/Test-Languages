@@ -1,41 +1,41 @@
-Random DNA Sequence results
+Random DNA Sequence Results
 
->random sequence 1
+>Random Sequence 1
 gatggcggtgaggttggatagtatacctaacgaacggcaagagacggaaaattat
 aattgtaagagccatagggagggaccttttttcatttggc
 
->random sequence 2
+>Random Sequence 2
 cgacctacctggagagttttaccgccagctctcgggttccaaatatttgaatga
 ggcgatccaatacccgcttattcagatattggtatgcgtg
 
->random sequence 3
+>Random Sequence 3
 ggtgtgcccatagtaaacgggcggccggagaactagctaggctc
 aaacctaaaacctcacgctcacgcttacgtatttcgactc
 
->random sequence 4
+>Random Sequence 4
 gccaaccatcaggcagatcgcagccaatttaaactcagagtggccgga
 gttcacaccccgtacttaccaacacccgttgatcccgaac
 
->random sequence 5
+>Random Sequence 5
 tgtgaatgggggagtgaccgctagaggacttcacgcgagcagaagccggat
 agaggcatcaccgtccatggaaatgacgctgggctacgtc
 
->random sequence 6
+>Random Sequence 6
 cttatagcttaatctaggttatgttaacgtcgccgtgctcgttgtctggtcggctag
 ttgtgtttggttcgacaacatcctagaccgatgtgagccg
 
->random sequence 7
+>Random Sequence 7
 ggacgcgcacacgattagcagttagcggcgcatccctgggagaaaggtttatcgt
 acaaccctcacgaggtgttttcagcgatttcgtatgtatt
 
->random sequence 8
+>Random Sequence 8
 acgtaacgcactctcctagaatccagtcgaataacgcccaaacatcaggca
 
->random sequence 9
+>Random Sequence 9
 acgatcgacaagatagttccaggccctgcgcgggagtacaagatcgctgtcga
 gtaacacgacaatactagggcttgccgcccttggatgtac
 
->random sequence 10
+>Random Sequence 10
 aaaaactgccagctactatattgcctattactagatgcagtgaa
 gtcatttcttatgttaggtatagcaaagcagtgacccccc
 
